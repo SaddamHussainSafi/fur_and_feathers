@@ -1,0 +1,61 @@
+spring:
+  application:
+    name: fur-and-feathers-backend
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/fur_and_feathers?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: your-email@gmail.com
+    password: your-app-password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    com.furandfeathers: DEBUG
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui
+
+app:
+  jwt:
+    # Use a strong key (>= 32 chars) in production or set APP_JWT_SECRET env var
+    secret: change_me_change_me_change_me_change_me_32_chars
+    expiration-ms: 86400000
+  cors:
+    allowed-origins: http://localhost:3000,http://localhost:3001
+    allowed-methods: GET,POST,PUT,DELETE,OPTIONS
+    allowed-headers: "*"
+    max-age: 3600
