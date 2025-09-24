@@ -1,7 +1,5 @@
 package com.furandfeathers.pet;
 
-import com.furandfeathers.model.PetStatus;
-import com.furandfeathers.model.Shelter;
 import jakarta.persistence.*;
 import lombok.*;
 

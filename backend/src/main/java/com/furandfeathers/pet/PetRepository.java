@@ -1,6 +1,5 @@
 package com.furandfeathers.pet;
 
-import com.furandfeathers.model.PetStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
